@@ -11,9 +11,40 @@
 import { Route as rootRouteImport } from './features/~__root'
 import { Route as SignupRouteImport } from './features/~signup'
 import { Route as SearchRouteImport } from './features/~search'
+import { Route as MyReviewsRouteImport } from './features/~my-reviews'
+import { Route as MyOrdersRouteImport } from './features/~my-orders'
 import { Route as LoginRouteImport } from './features/~login'
+import { Route as FavoritesRouteImport } from './features/~favorites'
 import { Route as EditProfileRouteImport } from './features/~edit-profile'
+import { Route as ChatRouteImport } from './features/~chat'
 import { Route as IndexRouteImport } from './features/~index'
+import { Route as VenuesIdRouteImport } from './features/~venues/~$id'
+import { Route as LocationsLocationIdRouteImport } from './features/~locations/~$location-id'
+import { Route as OwnerIndexRouteImport } from './features/~owner/~index'
+import { Route as AdminIndexRouteImport } from './features/~admin/~index'
+import { Route as OwnerLocationsCreateRouteImport } from './features/~owner/~locations/~create'
+import { Route as OwnerLocations_layoutRouteImport } from './features/~owner/~locations/~__layout'
+import { Route as AdminVenueTypesCreateRouteImport } from './features/~admin/~venue-types/~create'
+import { Route as AdminUsersUserIdRouteImport } from './features/~admin/~users/~$user-id'
+import { Route as AdminDiscountsCreateRouteImport } from './features/~admin/~discounts/~create'
+import { Route as OwnerSingupIndexRouteImport } from './features/~owner/~singup/~index'
+import { Route as OwnerOrdersIndexRouteImport } from './features/~owner/~orders/~index'
+import { Route as AdminVenueTypesIndexRouteImport } from './features/~admin/~venue-types/~index'
+import { Route as AdminUsersIndexRouteImport } from './features/~admin/~users/~index'
+import { Route as AdminOwnerFeesIndexRouteImport } from './features/~admin/~owner-fees/~index'
+import { Route as AdminDiscountsIndexRouteImport } from './features/~admin/~discounts/~index'
+import { Route as OwnerLocationsLocationIdEditRouteImport } from './features/~owner/~locations/~$location-id/~edit'
+import { Route as LocationsLocationIdVenuesVenueNameRouteImport } from './features/~locations/~$location-id/~venues/~$venue-name'
+import { Route as OwnerLocationsLocationIdIndexRouteImport } from './features/~owner/~locations/~$location-id/~index'
+import { Route as CheckoutLocationIdVenueIdIndexRouteImport } from './features/~checkout/~$location-id/~$venue-id/~index'
+import { Route as AdminVenueTypesEditIdIndexRouteImport } from './features/~admin/~venue-types/~$edit-id/~index'
+import { Route as AdminDiscountsEditIdIndexRouteImport } from './features/~admin/~discounts/~$edit-id/~index'
+import { Route as OwnerLocationsLocationIdVenuesCreateRouteImport } from './features/~owner/~locations/~$location-id/~venues/~create'
+import { Route as OwnerLocationsLocationIdVenues_layoutRouteImport } from './features/~owner/~locations/~$location-id/~venues/~__layout'
+import { Route as OwnerLocationsLocationIdAmenityCreateRouteImport } from './features/~owner/~locations/~$location-id/~amenity/~create'
+import { Route as OwnerLocationsLocationIdVenuesVenueIdEditRouteImport } from './features/~owner/~locations/~$location-id/~venues/~$venue-id/~edit'
+import { Route as OwnerLocationsLocationIdVenuesVenueId_layoutRouteImport } from './features/~owner/~locations/~$location-id/~venues/~$venue-id/~__layout'
+import { Route as OwnerLocationsLocationIdAmenityAmenityIdEditRouteImport } from './features/~owner/~locations/~$location-id/~amenity/~$amenity-id/~edit'
 
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
@@ -25,9 +56,24 @@ const SearchRoute = SearchRouteImport.update({
   path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyReviewsRoute = MyReviewsRouteImport.update({
+  id: '/my-reviews',
+  path: '/my-reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MyOrdersRoute = MyOrdersRouteImport.update({
+  id: '/my-orders',
+  path: '/my-orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritesRoute = FavoritesRouteImport.update({
+  id: '/favorites',
+  path: '/favorites',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EditProfileRoute = EditProfileRouteImport.update({
@@ -35,48 +81,432 @@ const EditProfileRoute = EditProfileRouteImport.update({
   path: '/edit-profile',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VenuesIdRoute = VenuesIdRouteImport.update({
+  id: '/venues/$id',
+  path: '/venues/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsLocationIdRoute = LocationsLocationIdRouteImport.update({
+  id: '/locations/$location-id',
+  path: '/locations/$location-id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerIndexRoute = OwnerIndexRouteImport.update({
+  id: '/owner/',
+  path: '/owner/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerLocationsCreateRoute = OwnerLocationsCreateRouteImport.update({
+  id: '/owner/locations/create',
+  path: '/owner/locations/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerLocations_layoutRoute = OwnerLocations_layoutRouteImport.update({
+  id: '/owner/locations/__layout',
+  path: '/owner/locations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminVenueTypesCreateRoute = AdminVenueTypesCreateRouteImport.update({
+  id: '/admin/venue-types/create',
+  path: '/admin/venue-types/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersUserIdRoute = AdminUsersUserIdRouteImport.update({
+  id: '/admin/users/$user-id',
+  path: '/admin/users/$user-id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDiscountsCreateRoute = AdminDiscountsCreateRouteImport.update({
+  id: '/admin/discounts/create',
+  path: '/admin/discounts/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerSingupIndexRoute = OwnerSingupIndexRouteImport.update({
+  id: '/owner/singup/',
+  path: '/owner/singup/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerOrdersIndexRoute = OwnerOrdersIndexRouteImport.update({
+  id: '/owner/orders/',
+  path: '/owner/orders/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminVenueTypesIndexRoute = AdminVenueTypesIndexRouteImport.update({
+  id: '/admin/venue-types/',
+  path: '/admin/venue-types/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersIndexRoute = AdminUsersIndexRouteImport.update({
+  id: '/admin/users/',
+  path: '/admin/users/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminOwnerFeesIndexRoute = AdminOwnerFeesIndexRouteImport.update({
+  id: '/admin/owner-fees/',
+  path: '/admin/owner-fees/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDiscountsIndexRoute = AdminDiscountsIndexRouteImport.update({
+  id: '/admin/discounts/',
+  path: '/admin/discounts/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerLocationsLocationIdEditRoute =
+  OwnerLocationsLocationIdEditRouteImport.update({
+    id: '/owner/locations/$location-id/edit',
+    path: '/owner/locations/$location-id/edit',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LocationsLocationIdVenuesVenueNameRoute =
+  LocationsLocationIdVenuesVenueNameRouteImport.update({
+    id: '/venues/$venue-name',
+    path: '/venues/$venue-name',
+    getParentRoute: () => LocationsLocationIdRoute,
+  } as any)
+const OwnerLocationsLocationIdIndexRoute =
+  OwnerLocationsLocationIdIndexRouteImport.update({
+    id: '/owner/locations/$location-id/',
+    path: '/owner/locations/$location-id/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CheckoutLocationIdVenueIdIndexRoute =
+  CheckoutLocationIdVenueIdIndexRouteImport.update({
+    id: '/checkout/$location-id/$venue-id/',
+    path: '/checkout/$location-id/$venue-id/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdminVenueTypesEditIdIndexRoute =
+  AdminVenueTypesEditIdIndexRouteImport.update({
+    id: '/admin/venue-types/$edit-id/',
+    path: '/admin/venue-types/$edit-id/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdminDiscountsEditIdIndexRoute =
+  AdminDiscountsEditIdIndexRouteImport.update({
+    id: '/admin/discounts/$edit-id/',
+    path: '/admin/discounts/$edit-id/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OwnerLocationsLocationIdVenuesCreateRoute =
+  OwnerLocationsLocationIdVenuesCreateRouteImport.update({
+    id: '/owner/locations/$location-id/venues/create',
+    path: '/owner/locations/$location-id/venues/create',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OwnerLocationsLocationIdVenues_layoutRoute =
+  OwnerLocationsLocationIdVenues_layoutRouteImport.update({
+    id: '/owner/locations/$location-id/venues/__layout',
+    path: '/owner/locations/$location-id/venues',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OwnerLocationsLocationIdAmenityCreateRoute =
+  OwnerLocationsLocationIdAmenityCreateRouteImport.update({
+    id: '/owner/locations/$location-id/amenity/create',
+    path: '/owner/locations/$location-id/amenity/create',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OwnerLocationsLocationIdVenuesVenueIdEditRoute =
+  OwnerLocationsLocationIdVenuesVenueIdEditRouteImport.update({
+    id: '/owner/locations/$location-id/venues/$venue-id/edit',
+    path: '/owner/locations/$location-id/venues/$venue-id/edit',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OwnerLocationsLocationIdVenuesVenueId_layoutRoute =
+  OwnerLocationsLocationIdVenuesVenueId_layoutRouteImport.update({
+    id: '/owner/locations/$location-id/venues/$venue-id/__layout',
+    path: '/owner/locations/$location-id/venues/$venue-id',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OwnerLocationsLocationIdAmenityAmenityIdEditRoute =
+  OwnerLocationsLocationIdAmenityAmenityIdEditRouteImport.update({
+    id: '/owner/locations/$location-id/amenity/$amenity-id/edit',
+    path: '/owner/locations/$location-id/amenity/$amenity-id/edit',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
   '/edit-profile': typeof EditProfileRoute
+  '/favorites': typeof FavoritesRoute
   '/login': typeof LoginRoute
+  '/my-orders': typeof MyOrdersRoute
+  '/my-reviews': typeof MyReviewsRoute
   '/search': typeof SearchRoute
   '/signup': typeof SignupRoute
+  '/admin/': typeof AdminIndexRoute
+  '/owner/': typeof OwnerIndexRoute
+  '/locations/$location-id': typeof LocationsLocationIdRouteWithChildren
+  '/venues/$id': typeof VenuesIdRoute
+  '/admin/discounts/': typeof AdminDiscountsIndexRoute
+  '/admin/owner-fees/': typeof AdminOwnerFeesIndexRoute
+  '/admin/users/': typeof AdminUsersIndexRoute
+  '/admin/venue-types/': typeof AdminVenueTypesIndexRoute
+  '/owner/orders/': typeof OwnerOrdersIndexRoute
+  '/owner/singup/': typeof OwnerSingupIndexRoute
+  '/admin/discounts/create': typeof AdminDiscountsCreateRoute
+  '/admin/users/$user-id': typeof AdminUsersUserIdRoute
+  '/admin/venue-types/create': typeof AdminVenueTypesCreateRoute
+  '/owner/locations': typeof OwnerLocations_layoutRoute
+  '/owner/locations/create': typeof OwnerLocationsCreateRoute
+  '/admin/discounts/$edit-id/': typeof AdminDiscountsEditIdIndexRoute
+  '/admin/venue-types/$edit-id/': typeof AdminVenueTypesEditIdIndexRoute
+  '/checkout/$location-id/$venue-id/': typeof CheckoutLocationIdVenueIdIndexRoute
+  '/owner/locations/$location-id/': typeof OwnerLocationsLocationIdIndexRoute
+  '/locations/$location-id/venues/$venue-name': typeof LocationsLocationIdVenuesVenueNameRoute
+  '/owner/locations/$location-id/edit': typeof OwnerLocationsLocationIdEditRoute
+  '/owner/locations/$location-id/amenity/create': typeof OwnerLocationsLocationIdAmenityCreateRoute
+  '/owner/locations/$location-id/venues': typeof OwnerLocationsLocationIdVenues_layoutRoute
+  '/owner/locations/$location-id/venues/create': typeof OwnerLocationsLocationIdVenuesCreateRoute
+  '/owner/locations/$location-id/amenity/$amenity-id/edit': typeof OwnerLocationsLocationIdAmenityAmenityIdEditRoute
+  '/owner/locations/$location-id/venues/$venue-id': typeof OwnerLocationsLocationIdVenuesVenueId_layoutRoute
+  '/owner/locations/$location-id/venues/$venue-id/edit': typeof OwnerLocationsLocationIdVenuesVenueIdEditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
   '/edit-profile': typeof EditProfileRoute
+  '/favorites': typeof FavoritesRoute
   '/login': typeof LoginRoute
+  '/my-orders': typeof MyOrdersRoute
+  '/my-reviews': typeof MyReviewsRoute
   '/search': typeof SearchRoute
   '/signup': typeof SignupRoute
+  '/admin': typeof AdminIndexRoute
+  '/owner': typeof OwnerIndexRoute
+  '/locations/$location-id': typeof LocationsLocationIdRouteWithChildren
+  '/venues/$id': typeof VenuesIdRoute
+  '/admin/discounts': typeof AdminDiscountsIndexRoute
+  '/admin/owner-fees': typeof AdminOwnerFeesIndexRoute
+  '/admin/users': typeof AdminUsersIndexRoute
+  '/admin/venue-types': typeof AdminVenueTypesIndexRoute
+  '/owner/orders': typeof OwnerOrdersIndexRoute
+  '/owner/singup': typeof OwnerSingupIndexRoute
+  '/admin/discounts/create': typeof AdminDiscountsCreateRoute
+  '/admin/users/$user-id': typeof AdminUsersUserIdRoute
+  '/admin/venue-types/create': typeof AdminVenueTypesCreateRoute
+  '/owner/locations': typeof OwnerLocations_layoutRoute
+  '/owner/locations/create': typeof OwnerLocationsCreateRoute
+  '/admin/discounts/$edit-id': typeof AdminDiscountsEditIdIndexRoute
+  '/admin/venue-types/$edit-id': typeof AdminVenueTypesEditIdIndexRoute
+  '/checkout/$location-id/$venue-id': typeof CheckoutLocationIdVenueIdIndexRoute
+  '/owner/locations/$location-id': typeof OwnerLocationsLocationIdIndexRoute
+  '/locations/$location-id/venues/$venue-name': typeof LocationsLocationIdVenuesVenueNameRoute
+  '/owner/locations/$location-id/edit': typeof OwnerLocationsLocationIdEditRoute
+  '/owner/locations/$location-id/amenity/create': typeof OwnerLocationsLocationIdAmenityCreateRoute
+  '/owner/locations/$location-id/venues': typeof OwnerLocationsLocationIdVenues_layoutRoute
+  '/owner/locations/$location-id/venues/create': typeof OwnerLocationsLocationIdVenuesCreateRoute
+  '/owner/locations/$location-id/amenity/$amenity-id/edit': typeof OwnerLocationsLocationIdAmenityAmenityIdEditRoute
+  '/owner/locations/$location-id/venues/$venue-id': typeof OwnerLocationsLocationIdVenuesVenueId_layoutRoute
+  '/owner/locations/$location-id/venues/$venue-id/edit': typeof OwnerLocationsLocationIdVenuesVenueIdEditRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
   '/edit-profile': typeof EditProfileRoute
+  '/favorites': typeof FavoritesRoute
   '/login': typeof LoginRoute
+  '/my-orders': typeof MyOrdersRoute
+  '/my-reviews': typeof MyReviewsRoute
   '/search': typeof SearchRoute
   '/signup': typeof SignupRoute
+  '/admin/': typeof AdminIndexRoute
+  '/owner/': typeof OwnerIndexRoute
+  '/locations/$location-id': typeof LocationsLocationIdRouteWithChildren
+  '/venues/$id': typeof VenuesIdRoute
+  '/admin/discounts/': typeof AdminDiscountsIndexRoute
+  '/admin/owner-fees/': typeof AdminOwnerFeesIndexRoute
+  '/admin/users/': typeof AdminUsersIndexRoute
+  '/admin/venue-types/': typeof AdminVenueTypesIndexRoute
+  '/owner/orders/': typeof OwnerOrdersIndexRoute
+  '/owner/singup/': typeof OwnerSingupIndexRoute
+  '/admin/discounts/create': typeof AdminDiscountsCreateRoute
+  '/admin/users/$user-id': typeof AdminUsersUserIdRoute
+  '/admin/venue-types/create': typeof AdminVenueTypesCreateRoute
+  '/owner/locations/__layout': typeof OwnerLocations_layoutRoute
+  '/owner/locations/create': typeof OwnerLocationsCreateRoute
+  '/admin/discounts/$edit-id/': typeof AdminDiscountsEditIdIndexRoute
+  '/admin/venue-types/$edit-id/': typeof AdminVenueTypesEditIdIndexRoute
+  '/checkout/$location-id/$venue-id/': typeof CheckoutLocationIdVenueIdIndexRoute
+  '/owner/locations/$location-id/': typeof OwnerLocationsLocationIdIndexRoute
+  '/locations/$location-id/venues/$venue-name': typeof LocationsLocationIdVenuesVenueNameRoute
+  '/owner/locations/$location-id/edit': typeof OwnerLocationsLocationIdEditRoute
+  '/owner/locations/$location-id/amenity/create': typeof OwnerLocationsLocationIdAmenityCreateRoute
+  '/owner/locations/$location-id/venues/__layout': typeof OwnerLocationsLocationIdVenues_layoutRoute
+  '/owner/locations/$location-id/venues/create': typeof OwnerLocationsLocationIdVenuesCreateRoute
+  '/owner/locations/$location-id/amenity/$amenity-id/edit': typeof OwnerLocationsLocationIdAmenityAmenityIdEditRoute
+  '/owner/locations/$location-id/venues/$venue-id/__layout': typeof OwnerLocationsLocationIdVenuesVenueId_layoutRoute
+  '/owner/locations/$location-id/venues/$venue-id/edit': typeof OwnerLocationsLocationIdVenuesVenueIdEditRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/edit-profile' | '/login' | '/search' | '/signup'
+  fullPaths:
+    | '/'
+    | '/chat'
+    | '/edit-profile'
+    | '/favorites'
+    | '/login'
+    | '/my-orders'
+    | '/my-reviews'
+    | '/search'
+    | '/signup'
+    | '/admin/'
+    | '/owner/'
+    | '/locations/$location-id'
+    | '/venues/$id'
+    | '/admin/discounts/'
+    | '/admin/owner-fees/'
+    | '/admin/users/'
+    | '/admin/venue-types/'
+    | '/owner/orders/'
+    | '/owner/singup/'
+    | '/admin/discounts/create'
+    | '/admin/users/$user-id'
+    | '/admin/venue-types/create'
+    | '/owner/locations'
+    | '/owner/locations/create'
+    | '/admin/discounts/$edit-id/'
+    | '/admin/venue-types/$edit-id/'
+    | '/checkout/$location-id/$venue-id/'
+    | '/owner/locations/$location-id/'
+    | '/locations/$location-id/venues/$venue-name'
+    | '/owner/locations/$location-id/edit'
+    | '/owner/locations/$location-id/amenity/create'
+    | '/owner/locations/$location-id/venues'
+    | '/owner/locations/$location-id/venues/create'
+    | '/owner/locations/$location-id/amenity/$amenity-id/edit'
+    | '/owner/locations/$location-id/venues/$venue-id'
+    | '/owner/locations/$location-id/venues/$venue-id/edit'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/edit-profile' | '/login' | '/search' | '/signup'
-  id: '__root__' | '/' | '/edit-profile' | '/login' | '/search' | '/signup'
+  to:
+    | '/'
+    | '/chat'
+    | '/edit-profile'
+    | '/favorites'
+    | '/login'
+    | '/my-orders'
+    | '/my-reviews'
+    | '/search'
+    | '/signup'
+    | '/admin'
+    | '/owner'
+    | '/locations/$location-id'
+    | '/venues/$id'
+    | '/admin/discounts'
+    | '/admin/owner-fees'
+    | '/admin/users'
+    | '/admin/venue-types'
+    | '/owner/orders'
+    | '/owner/singup'
+    | '/admin/discounts/create'
+    | '/admin/users/$user-id'
+    | '/admin/venue-types/create'
+    | '/owner/locations'
+    | '/owner/locations/create'
+    | '/admin/discounts/$edit-id'
+    | '/admin/venue-types/$edit-id'
+    | '/checkout/$location-id/$venue-id'
+    | '/owner/locations/$location-id'
+    | '/locations/$location-id/venues/$venue-name'
+    | '/owner/locations/$location-id/edit'
+    | '/owner/locations/$location-id/amenity/create'
+    | '/owner/locations/$location-id/venues'
+    | '/owner/locations/$location-id/venues/create'
+    | '/owner/locations/$location-id/amenity/$amenity-id/edit'
+    | '/owner/locations/$location-id/venues/$venue-id'
+    | '/owner/locations/$location-id/venues/$venue-id/edit'
+  id:
+    | '__root__'
+    | '/'
+    | '/chat'
+    | '/edit-profile'
+    | '/favorites'
+    | '/login'
+    | '/my-orders'
+    | '/my-reviews'
+    | '/search'
+    | '/signup'
+    | '/admin/'
+    | '/owner/'
+    | '/locations/$location-id'
+    | '/venues/$id'
+    | '/admin/discounts/'
+    | '/admin/owner-fees/'
+    | '/admin/users/'
+    | '/admin/venue-types/'
+    | '/owner/orders/'
+    | '/owner/singup/'
+    | '/admin/discounts/create'
+    | '/admin/users/$user-id'
+    | '/admin/venue-types/create'
+    | '/owner/locations/__layout'
+    | '/owner/locations/create'
+    | '/admin/discounts/$edit-id/'
+    | '/admin/venue-types/$edit-id/'
+    | '/checkout/$location-id/$venue-id/'
+    | '/owner/locations/$location-id/'
+    | '/locations/$location-id/venues/$venue-name'
+    | '/owner/locations/$location-id/edit'
+    | '/owner/locations/$location-id/amenity/create'
+    | '/owner/locations/$location-id/venues/__layout'
+    | '/owner/locations/$location-id/venues/create'
+    | '/owner/locations/$location-id/amenity/$amenity-id/edit'
+    | '/owner/locations/$location-id/venues/$venue-id/__layout'
+    | '/owner/locations/$location-id/venues/$venue-id/edit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChatRoute: typeof ChatRoute
   EditProfileRoute: typeof EditProfileRoute
+  FavoritesRoute: typeof FavoritesRoute
   LoginRoute: typeof LoginRoute
+  MyOrdersRoute: typeof MyOrdersRoute
+  MyReviewsRoute: typeof MyReviewsRoute
   SearchRoute: typeof SearchRoute
   SignupRoute: typeof SignupRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  OwnerIndexRoute: typeof OwnerIndexRoute
+  LocationsLocationIdRoute: typeof LocationsLocationIdRouteWithChildren
+  VenuesIdRoute: typeof VenuesIdRoute
+  AdminDiscountsIndexRoute: typeof AdminDiscountsIndexRoute
+  AdminOwnerFeesIndexRoute: typeof AdminOwnerFeesIndexRoute
+  AdminUsersIndexRoute: typeof AdminUsersIndexRoute
+  AdminVenueTypesIndexRoute: typeof AdminVenueTypesIndexRoute
+  OwnerOrdersIndexRoute: typeof OwnerOrdersIndexRoute
+  OwnerSingupIndexRoute: typeof OwnerSingupIndexRoute
+  AdminDiscountsCreateRoute: typeof AdminDiscountsCreateRoute
+  AdminUsersUserIdRoute: typeof AdminUsersUserIdRoute
+  AdminVenueTypesCreateRoute: typeof AdminVenueTypesCreateRoute
+  OwnerLocations_layoutRoute: typeof OwnerLocations_layoutRoute
+  OwnerLocationsCreateRoute: typeof OwnerLocationsCreateRoute
+  AdminDiscountsEditIdIndexRoute: typeof AdminDiscountsEditIdIndexRoute
+  AdminVenueTypesEditIdIndexRoute: typeof AdminVenueTypesEditIdIndexRoute
+  CheckoutLocationIdVenueIdIndexRoute: typeof CheckoutLocationIdVenueIdIndexRoute
+  OwnerLocationsLocationIdIndexRoute: typeof OwnerLocationsLocationIdIndexRoute
+  OwnerLocationsLocationIdEditRoute: typeof OwnerLocationsLocationIdEditRoute
+  OwnerLocationsLocationIdAmenityCreateRoute: typeof OwnerLocationsLocationIdAmenityCreateRoute
+  OwnerLocationsLocationIdVenues_layoutRoute: typeof OwnerLocationsLocationIdVenues_layoutRoute
+  OwnerLocationsLocationIdVenuesCreateRoute: typeof OwnerLocationsLocationIdVenuesCreateRoute
+  OwnerLocationsLocationIdAmenityAmenityIdEditRoute: typeof OwnerLocationsLocationIdAmenityAmenityIdEditRoute
+  OwnerLocationsLocationIdVenuesVenueId_layoutRoute: typeof OwnerLocationsLocationIdVenuesVenueId_layoutRoute
+  OwnerLocationsLocationIdVenuesVenueIdEditRoute: typeof OwnerLocationsLocationIdVenuesVenueIdEditRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -95,11 +525,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/my-reviews': {
+      id: '/my-reviews'
+      path: '/my-reviews'
+      fullPath: '/my-reviews'
+      preLoaderRoute: typeof MyReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-orders': {
+      id: '/my-orders'
+      path: '/my-orders'
+      fullPath: '/my-orders'
+      preLoaderRoute: typeof MyOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favorites': {
+      id: '/favorites'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/edit-profile': {
@@ -109,6 +560,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EditProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -116,15 +574,252 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/venues/$id': {
+      id: '/venues/$id'
+      path: '/venues/$id'
+      fullPath: '/venues/$id'
+      preLoaderRoute: typeof VenuesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/$location-id': {
+      id: '/locations/$location-id'
+      path: '/locations/$location-id'
+      fullPath: '/locations/$location-id'
+      preLoaderRoute: typeof LocationsLocationIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/': {
+      id: '/owner/'
+      path: '/owner'
+      fullPath: '/owner/'
+      preLoaderRoute: typeof OwnerIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/locations/create': {
+      id: '/owner/locations/create'
+      path: '/owner/locations/create'
+      fullPath: '/owner/locations/create'
+      preLoaderRoute: typeof OwnerLocationsCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/locations/__layout': {
+      id: '/owner/locations/__layout'
+      path: '/owner/locations'
+      fullPath: '/owner/locations'
+      preLoaderRoute: typeof OwnerLocations_layoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/venue-types/create': {
+      id: '/admin/venue-types/create'
+      path: '/admin/venue-types/create'
+      fullPath: '/admin/venue-types/create'
+      preLoaderRoute: typeof AdminVenueTypesCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users/$user-id': {
+      id: '/admin/users/$user-id'
+      path: '/admin/users/$user-id'
+      fullPath: '/admin/users/$user-id'
+      preLoaderRoute: typeof AdminUsersUserIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/discounts/create': {
+      id: '/admin/discounts/create'
+      path: '/admin/discounts/create'
+      fullPath: '/admin/discounts/create'
+      preLoaderRoute: typeof AdminDiscountsCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/singup/': {
+      id: '/owner/singup/'
+      path: '/owner/singup'
+      fullPath: '/owner/singup/'
+      preLoaderRoute: typeof OwnerSingupIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/orders/': {
+      id: '/owner/orders/'
+      path: '/owner/orders'
+      fullPath: '/owner/orders/'
+      preLoaderRoute: typeof OwnerOrdersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/venue-types/': {
+      id: '/admin/venue-types/'
+      path: '/admin/venue-types'
+      fullPath: '/admin/venue-types/'
+      preLoaderRoute: typeof AdminVenueTypesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users/': {
+      id: '/admin/users/'
+      path: '/admin/users'
+      fullPath: '/admin/users/'
+      preLoaderRoute: typeof AdminUsersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/owner-fees/': {
+      id: '/admin/owner-fees/'
+      path: '/admin/owner-fees'
+      fullPath: '/admin/owner-fees/'
+      preLoaderRoute: typeof AdminOwnerFeesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/discounts/': {
+      id: '/admin/discounts/'
+      path: '/admin/discounts'
+      fullPath: '/admin/discounts/'
+      preLoaderRoute: typeof AdminDiscountsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/locations/$location-id/edit': {
+      id: '/owner/locations/$location-id/edit'
+      path: '/owner/locations/$location-id/edit'
+      fullPath: '/owner/locations/$location-id/edit'
+      preLoaderRoute: typeof OwnerLocationsLocationIdEditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/$location-id/venues/$venue-name': {
+      id: '/locations/$location-id/venues/$venue-name'
+      path: '/venues/$venue-name'
+      fullPath: '/locations/$location-id/venues/$venue-name'
+      preLoaderRoute: typeof LocationsLocationIdVenuesVenueNameRouteImport
+      parentRoute: typeof LocationsLocationIdRoute
+    }
+    '/owner/locations/$location-id/': {
+      id: '/owner/locations/$location-id/'
+      path: '/owner/locations/$location-id'
+      fullPath: '/owner/locations/$location-id/'
+      preLoaderRoute: typeof OwnerLocationsLocationIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout/$location-id/$venue-id/': {
+      id: '/checkout/$location-id/$venue-id/'
+      path: '/checkout/$location-id/$venue-id'
+      fullPath: '/checkout/$location-id/$venue-id/'
+      preLoaderRoute: typeof CheckoutLocationIdVenueIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/venue-types/$edit-id/': {
+      id: '/admin/venue-types/$edit-id/'
+      path: '/admin/venue-types/$edit-id'
+      fullPath: '/admin/venue-types/$edit-id/'
+      preLoaderRoute: typeof AdminVenueTypesEditIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/discounts/$edit-id/': {
+      id: '/admin/discounts/$edit-id/'
+      path: '/admin/discounts/$edit-id'
+      fullPath: '/admin/discounts/$edit-id/'
+      preLoaderRoute: typeof AdminDiscountsEditIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/locations/$location-id/venues/create': {
+      id: '/owner/locations/$location-id/venues/create'
+      path: '/owner/locations/$location-id/venues/create'
+      fullPath: '/owner/locations/$location-id/venues/create'
+      preLoaderRoute: typeof OwnerLocationsLocationIdVenuesCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/locations/$location-id/venues/__layout': {
+      id: '/owner/locations/$location-id/venues/__layout'
+      path: '/owner/locations/$location-id/venues'
+      fullPath: '/owner/locations/$location-id/venues'
+      preLoaderRoute: typeof OwnerLocationsLocationIdVenues_layoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/locations/$location-id/amenity/create': {
+      id: '/owner/locations/$location-id/amenity/create'
+      path: '/owner/locations/$location-id/amenity/create'
+      fullPath: '/owner/locations/$location-id/amenity/create'
+      preLoaderRoute: typeof OwnerLocationsLocationIdAmenityCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/locations/$location-id/venues/$venue-id/edit': {
+      id: '/owner/locations/$location-id/venues/$venue-id/edit'
+      path: '/owner/locations/$location-id/venues/$venue-id/edit'
+      fullPath: '/owner/locations/$location-id/venues/$venue-id/edit'
+      preLoaderRoute: typeof OwnerLocationsLocationIdVenuesVenueIdEditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/locations/$location-id/venues/$venue-id/__layout': {
+      id: '/owner/locations/$location-id/venues/$venue-id/__layout'
+      path: '/owner/locations/$location-id/venues/$venue-id'
+      fullPath: '/owner/locations/$location-id/venues/$venue-id'
+      preLoaderRoute: typeof OwnerLocationsLocationIdVenuesVenueId_layoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/locations/$location-id/amenity/$amenity-id/edit': {
+      id: '/owner/locations/$location-id/amenity/$amenity-id/edit'
+      path: '/owner/locations/$location-id/amenity/$amenity-id/edit'
+      fullPath: '/owner/locations/$location-id/amenity/$amenity-id/edit'
+      preLoaderRoute: typeof OwnerLocationsLocationIdAmenityAmenityIdEditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface LocationsLocationIdRouteChildren {
+  LocationsLocationIdVenuesVenueNameRoute: typeof LocationsLocationIdVenuesVenueNameRoute
+}
+
+const LocationsLocationIdRouteChildren: LocationsLocationIdRouteChildren = {
+  LocationsLocationIdVenuesVenueNameRoute:
+    LocationsLocationIdVenuesVenueNameRoute,
+}
+
+const LocationsLocationIdRouteWithChildren =
+  LocationsLocationIdRoute._addFileChildren(LocationsLocationIdRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChatRoute: ChatRoute,
   EditProfileRoute: EditProfileRoute,
+  FavoritesRoute: FavoritesRoute,
   LoginRoute: LoginRoute,
+  MyOrdersRoute: MyOrdersRoute,
+  MyReviewsRoute: MyReviewsRoute,
   SearchRoute: SearchRoute,
   SignupRoute: SignupRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  OwnerIndexRoute: OwnerIndexRoute,
+  LocationsLocationIdRoute: LocationsLocationIdRouteWithChildren,
+  VenuesIdRoute: VenuesIdRoute,
+  AdminDiscountsIndexRoute: AdminDiscountsIndexRoute,
+  AdminOwnerFeesIndexRoute: AdminOwnerFeesIndexRoute,
+  AdminUsersIndexRoute: AdminUsersIndexRoute,
+  AdminVenueTypesIndexRoute: AdminVenueTypesIndexRoute,
+  OwnerOrdersIndexRoute: OwnerOrdersIndexRoute,
+  OwnerSingupIndexRoute: OwnerSingupIndexRoute,
+  AdminDiscountsCreateRoute: AdminDiscountsCreateRoute,
+  AdminUsersUserIdRoute: AdminUsersUserIdRoute,
+  AdminVenueTypesCreateRoute: AdminVenueTypesCreateRoute,
+  OwnerLocations_layoutRoute: OwnerLocations_layoutRoute,
+  OwnerLocationsCreateRoute: OwnerLocationsCreateRoute,
+  AdminDiscountsEditIdIndexRoute: AdminDiscountsEditIdIndexRoute,
+  AdminVenueTypesEditIdIndexRoute: AdminVenueTypesEditIdIndexRoute,
+  CheckoutLocationIdVenueIdIndexRoute: CheckoutLocationIdVenueIdIndexRoute,
+  OwnerLocationsLocationIdIndexRoute: OwnerLocationsLocationIdIndexRoute,
+  OwnerLocationsLocationIdEditRoute: OwnerLocationsLocationIdEditRoute,
+  OwnerLocationsLocationIdAmenityCreateRoute:
+    OwnerLocationsLocationIdAmenityCreateRoute,
+  OwnerLocationsLocationIdVenues_layoutRoute:
+    OwnerLocationsLocationIdVenues_layoutRoute,
+  OwnerLocationsLocationIdVenuesCreateRoute:
+    OwnerLocationsLocationIdVenuesCreateRoute,
+  OwnerLocationsLocationIdAmenityAmenityIdEditRoute:
+    OwnerLocationsLocationIdAmenityAmenityIdEditRoute,
+  OwnerLocationsLocationIdVenuesVenueId_layoutRoute:
+    OwnerLocationsLocationIdVenuesVenueId_layoutRoute,
+  OwnerLocationsLocationIdVenuesVenueIdEditRoute:
+    OwnerLocationsLocationIdVenuesVenueIdEditRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
