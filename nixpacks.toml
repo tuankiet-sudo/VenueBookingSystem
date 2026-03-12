@@ -1,5 +1,5 @@
 [phases.install]
-cmds = ["yarn install --immutable"]
+cmds = ["yarn install"]
 
 [phases.build]
 cmds = ["yarn build:server"]
