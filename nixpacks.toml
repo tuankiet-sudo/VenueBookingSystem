@@ -1,0 +1,8 @@
+[phases.install]
+cmds = ["yarn install --immutable"]
+
+[phases.build]
+cmds = ["yarn build:server"]
+
+[start]
+cmd = "node apps/server/dist/main"
