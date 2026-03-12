@@ -1,0 +1,17 @@
+-- FAVORS (clients favoriting locations)
+INSERT INTO favors (client_id, location_id)
+VALUES
+  -- 1. Alice (1111...) likes Sunrise Conference Hall (Loc 1)
+  (UUID_TO_BIN('11111111-1111-1111-1111-111111111111'), UUID_TO_BIN('10101010-1010-1010-1010-101010101001')), 
+
+  -- 2. Charlie (3333...) favorites Grace Events Center (Loc 3)
+  (UUID_TO_BIN('33333333-3333-3333-3333-333333333333'), UUID_TO_BIN('20202020-2020-2020-2020-202020202001')), 
+
+  -- 3. Eve (5555...) favorites Judy Workshop Hub (Loc 10)
+  (UUID_TO_BIN('55555555-5555-5555-5555-555555555555'), UUID_TO_BIN('50505050-5050-5050-5050-505050505002')),
+
+  -- 4. [MỚI] Bob (2222...) favorites Heidi Banquet Hall (Loc 5)
+  (UUID_TO_BIN('22222222-2222-2222-2222-222222222222'), UUID_TO_BIN('30303030-3030-3030-3030-303030303001')),
+
+  -- 5. [MỚI] David (4444...) favorites Ivan Rooftop Venue (Loc 7)
+  (UUID_TO_BIN('44444444-4444-4444-4444-444444444444'), UUID_TO_BIN('40404040-4040-4040-4040-404040404001'));
