@@ -4,7 +4,7 @@ services:
     name: venue-booking-api
     runtime: node
     rootDir: .
-    buildCommand: corepack enable && yarn install && yarn build:server
+    buildCommand: corepack yarn install && corepack yarn workspace api build
     startCommand: node apps/server/dist/main
     envVars:
       - key: NODE_ENV
@@ -41,7 +41,7 @@ services:
     name: venue-booking-web
     runtime: static
     rootDir: .
-    buildCommand: corepack enable && yarn install && yarn build:web
+    buildCommand: corepack yarn install && corepack yarn build:web
     staticPublishPath: apps/web/dist
     routes:
       - type: rewrite
