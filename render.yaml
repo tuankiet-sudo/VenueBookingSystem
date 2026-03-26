@@ -41,7 +41,7 @@ services:
     name: venue-booking-web
     runtime: static
     rootDir: .
-    buildCommand: corepack yarn install && corepack yarn build:web
+    buildCommand: corepack use yarn@4.12.0 && corepack yarn install && corepack yarn build:web
     staticPublishPath: apps/web/dist
     routes:
       - type: rewrite
