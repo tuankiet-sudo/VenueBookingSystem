@@ -10,7 +10,6 @@ import {
   DeleteApplyDto,
 } from '../dto/payment.dto';
 import { DatabaseService } from 'src/database/database.service';
-import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class PaymentService {
@@ -20,6 +19,7 @@ export class PaymentService {
   public async createInvoice(
     dto: CreateInvoiceDto,
   ): Promise<{ id: string; url: string; totalPrice: string }> {
+    const { v4: uuidv4 } = await import('uuid');
     const invoiceId = uuidv4();
     try {
       const data = await this.databaseService.execute<{
@@ -51,6 +51,7 @@ export class PaymentService {
     invoiceId: string;
   }): Promise<void> {
     // Simulate a transaction ID from webhook
+    const { v4: uuidv4 } = await import('uuid');
     const transactionId = uuidv4();
     try {
       await this.databaseService.execute(`CALL Order_Update(?, ?, ?, ?)`, [
@@ -113,6 +114,7 @@ export class PaymentService {
 
   // ===== DISCOUNT OPERATIONS =====
   public async createDiscount(dto: CreateDiscountDto): Promise<string> {
+    const { v4: uuidv4 } = await import('uuid');
     const discountId = uuidv4();
     try {
       await this.databaseService.execute(

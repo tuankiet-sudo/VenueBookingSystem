@@ -14,7 +14,6 @@ import {
   InvoiceCreateDataResponseDto,
 } from './dto/order-response.dto';
 import { DatabaseService } from 'src/database/database.service';
-import { v4 as uuidv4 } from 'uuid';
 import dayjs from 'dayjs';
 
 @Injectable()
@@ -26,6 +25,7 @@ export class OrderService {
     clientId: string,
     dto: CreateOrderDto,
   ): Promise<{ expiredTime: Date; orderId: string }> {
+    const { v4: uuidv4 } = await import('uuid');
     const orderId = uuidv4();
 
     try {

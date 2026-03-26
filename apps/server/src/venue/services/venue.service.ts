@@ -16,7 +16,6 @@ import {
 } from '../dto/create-venue.dto';
 import { VenuePreviewResponseDto } from '../dto/venue-preview-response.dto';
 import { DatabaseService } from 'src/database/database.service';
-import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class VenueService {
@@ -24,6 +23,7 @@ export class VenueService {
 
   // ===== VENUE TYPE OPERATIONS =====
   public async createVenueType(dto: CreateVenueTypeDto): Promise<string> {
+    const { v4: uuidv4 } = await import('uuid');
     if (dto.minCapacity > dto.maxCapacity) {
       throw new BadRequestException(
         'Minimum capacity cannot be greater than maximum capacity.',

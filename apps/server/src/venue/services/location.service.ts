@@ -18,6 +18,7 @@ export class LocationService {
     ownerId: string,
     dto: CreateLocationDto,
   ): Promise<string> {
+    const { v4: uuidv4 } = await import('uuid');
     const locationId = uuidv4();
 
     try {

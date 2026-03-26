@@ -1,13 +1,13 @@
 import { ConflictException, Injectable } from '@nestjs/common';
 import { DatabaseService } from 'src/database/database.service';
 import { CreateDiscountDto } from '../dto/create-payment.dto';
-import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class DiscountService {
   constructor(private databaseService: DatabaseService) {}
 
   public async createDiscount(dto: CreateDiscountDto): Promise<string> {
+    const { v4: uuidv4 } = await import('uuid');
     const discountIdBinary = uuidv4();
     // MySQL SET type needs to be converted to a comma-separated string
     const membershipTierString = dto.membershipTier
