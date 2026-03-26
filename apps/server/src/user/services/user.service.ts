@@ -7,7 +7,6 @@ import { DatabaseService } from 'src/database/database.service';
 import { CreateUserInterface } from '../user.interface';
 import { LoginDto } from 'src/auth/auth.dto';
 import * as bcrypt from 'bcrypt';
-import { v4 as uuidv4 } from 'uuid';
 import { convertBinaryHexToUUID, convertUUIDtoBinaryHex } from 'src/utils';
 import { User } from '../entities';
 import { UpdateUserDto } from '../user.dto';
@@ -19,6 +18,7 @@ export class UserService {
   public async createUser(userData: CreateUserInterface) {
     const { email, password, DoB, firstName, lastName } = userData;
     const hashedPassword = bcrypt.hashSync(password, 10);
+    const { v4 : uuidv4 } = await import('uuid');
     const userId = uuidv4();
     await this.databaseService.execute(
       `
