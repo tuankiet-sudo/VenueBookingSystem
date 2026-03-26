@@ -3,7 +3,7 @@ import axios from 'axios';
 import storage from '@/helpers/storage';
 
 const customAxios = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3001', // port BE, will be changed later when BE is ready
+  baseURL: import.meta.env.VITE_API_URL || 'https://venuebookingsystem.onrender.com', // port BE, will be changed later when BE is ready
   withCredentials: true,
 });
 

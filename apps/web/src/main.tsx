@@ -6,7 +6,7 @@ import { OpenAPI as OpenAPIConfig } from './generated/requests/core/OpenAPI';
 import { useAuthStore } from './stores';
 import './index.css';
 
-OpenAPIConfig.BASE = 'http://localhost:3001';
+OpenAPIConfig.BASE = 'https://venuebookingsystem.onrender.com';
 
 // Use global axios interceptor for error handling since OpenAPI config doesn't support error interceptors
 axios.interceptors.response.use(
