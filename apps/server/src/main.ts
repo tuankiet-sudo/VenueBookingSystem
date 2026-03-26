@@ -6,7 +6,7 @@ import * as yaml from 'js-yaml';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: process.env.CORS_ORIGIN || 'https://venue-booking-system-web.vercel.app/',
+    origin: process.env.CORS_ORIGIN || 'https://venue-booking-system-web.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
