@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react';
 import * as Yup from 'yup';
 
 import { discountApi, type CreateDiscountDto } from '@/api/discount.api';
-import { venueApi, VenueType } from '@/api/venue.api';
+import { venueApi } from '@/api/venue.api';
+import type { VenueType } from '@/api/venue.api';
 import { AdminSidebar } from '@/components/admin-sidebar';
 import { Footer } from '@/components/booking-footer';
 import { Header } from '@/components/booking-header';

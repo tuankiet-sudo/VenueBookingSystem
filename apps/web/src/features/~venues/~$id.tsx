@@ -249,7 +249,7 @@ function VenueDetailPage() {
                   {venue.images.length > 0 && (
                     <>
                       <img
-                        src={venue.images[currentImageIndex].locationImgURL}
+                        src={venue.images[currentImageIndex]!.locationImgURL}
                         alt={`${venue.name} - Image ${currentImageIndex + 1}`}
                         className="size-full object-cover"
                       />

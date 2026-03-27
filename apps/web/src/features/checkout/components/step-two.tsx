@@ -15,7 +15,7 @@ interface StepTwoProps {
 
 export function StepTwo({
   bookingId,
-  onPaymentSuccess,
+  onPaymentSuccess: _onPaymentSuccess,
   onBack,
   handleChangeTotalAmount,
 }: StepTwoProps) {

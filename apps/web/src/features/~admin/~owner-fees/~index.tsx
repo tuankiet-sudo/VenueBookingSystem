@@ -6,7 +6,7 @@ import { Footer } from '@/components/booking-footer';
 import { Header } from '@/components/booking-header';
 import { formatCurrency } from '@/data/mock-data';
 import { useLocationsServiceLocationControllerGetOwnerFees } from '@/generated/queries';
-import { AdminOwnerFeesResponseDto } from '@/generated/requests';
+import type { AdminOwnerFeesResponseDto } from '@/generated/requests';
 import { useAuthStore } from '@/stores';
 
 export const Route = createFileRoute('/admin/owner-fees/')({

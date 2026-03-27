@@ -6,7 +6,8 @@ import {
 import { CheckCircle, AlertCircle, Save } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-import { amenityApi, Amenity } from '@/api/amenity.api';
+import { amenityApi } from '@/api/amenity.api';
+import type { Amenity } from '@/api/amenity.api';
 import { locationApi } from '@/api/location.api';
 import { Footer } from '@/components/booking-footer';
 import { Header } from '@/components/booking-header';

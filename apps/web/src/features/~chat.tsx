@@ -209,7 +209,7 @@ function ChatPage() {
     useState<Conversation[]>(MOCK_CONVERSATIONS);
   const [activeConversationId, setActiveConversationId] = useState<
     string | null
-  >(MOCK_CONVERSATIONS[0].id);
+  >(MOCK_CONVERSATIONS[0]?.id ?? null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);

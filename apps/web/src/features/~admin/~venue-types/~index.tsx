@@ -2,7 +2,8 @@ import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { Plus, Edit2, Trash2, Users } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-import { venueApi, VenueType } from '@/api/venue.api';
+import { venueApi } from '@/api/venue.api';
+import type { VenueType } from '@/api/venue.api';
 import { AdminSidebar } from '@/components/admin-sidebar';
 import { Footer } from '@/components/booking-footer';
 import { Header } from '@/components/booking-header';

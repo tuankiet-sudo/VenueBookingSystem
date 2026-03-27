@@ -91,9 +91,9 @@ export function dateToTimeString(date: Date): string {
  * Converts time string to Date (today's date with specified time)
  */
 export function timeStringToDate(timeStr: string): Date {
-  const [hours, minutes] = timeStr.split(':').map(Number);
+  const [h = 0, m = 0] = timeStr.split(':').map(Number);
   const date = new Date();
-  date.setHours(hours, minutes, 0, 0);
+  date.setHours(h, m, 0, 0);
   return date;
 }
 /**

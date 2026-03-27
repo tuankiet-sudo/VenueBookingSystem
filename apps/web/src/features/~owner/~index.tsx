@@ -80,7 +80,7 @@ export function OwnerLanding() {
         // Revert local state on error
         setLocationStatus((prev) => ({
           ...prev,
-          [locationId]: currentStatus,
+          [locationId]: currentStatus ?? false,
         }));
       });
     } finally {

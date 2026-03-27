@@ -1,6 +1,7 @@
 // generated with @7nohe/openapi-react-query-codegen@1.4.1
 
-import { UseQueryOptions, useSuspenseQuery } from '@tanstack/react-query';
+import type { UseQueryOptions } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import {
   AmenitiesService,
   AppService,
@@ -9,7 +10,7 @@ import {
   UsersService,
   VenuesService,
 } from '../requests/services.gen';
-import { UpdateVenueDto } from '../requests/types.gen';
+import type { UpdateVenueDto } from '../requests/types.gen';
 import * as Common from './common';
 /**
  * @returns string

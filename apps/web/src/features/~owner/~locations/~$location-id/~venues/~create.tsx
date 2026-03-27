@@ -189,7 +189,7 @@ export function CreateVenuePage() {
   };
 
   const removeImage = (index: number) => {
-    URL.revokeObjectURL(imagePreviews[index].preview);
+    URL.revokeObjectURL(imagePreviews[index]!.preview);
     const newPreviews = imagePreviews.filter((_, i) => i !== index);
     const newFiles = formData.images.filter((_, i) => i !== index);
     setImagePreviews(newPreviews);

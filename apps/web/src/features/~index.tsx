@@ -76,6 +76,7 @@ export function HomePage() {
         to: '/search',
         search: {
           ...searchData,
+          checkIn: searchData.checkIn ?? '',
           size: size || '', // Ensure size is always a string
         },
       });

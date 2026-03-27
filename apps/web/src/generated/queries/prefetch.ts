@@ -9,7 +9,7 @@ import {
   UsersService,
   VenuesService,
 } from '../requests/services.gen';
-import { UpdateVenueDto } from '../requests/types.gen';
+import type { UpdateVenueDto } from '../requests/types.gen';
 import * as Common from './common';
 /**
  * @returns string
