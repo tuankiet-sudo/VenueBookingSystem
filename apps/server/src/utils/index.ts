@@ -1,6 +1,6 @@
 export function convertUUIDtoBinaryHex(rawUUID: string): Buffer {
   if (typeof rawUUID !== 'string') {
-    throw new TypeError(`Expected string, got ${typeof rawUUID}`);
+    throw new TypeError(`Expected string, got ${typeof rawUUID}: ${rawUUID}`);
   }
   return Buffer.from(rawUUID.replace(/-/g, ''), 'hex');
 }
