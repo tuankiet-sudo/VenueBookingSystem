@@ -5,7 +5,7 @@ import { DatabaseModule } from 'src/database/database.module';
 import { TokenService } from './services';
 import { UserModule } from 'src/user/user.module';
 import { JwtModule } from '@nestjs/jwt';
-import { commonConfig, CommonConfigType } from 'src/config';
+import { commonConfig, CommonConfigType } from '../config';
 
 @Global()
 @Module({

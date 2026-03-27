@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Token } from '../entities/token.entity';
-import * as config from 'src/config';
+import * as config from '../../config';
 import dayjs from 'dayjs';
 
 @Injectable()
