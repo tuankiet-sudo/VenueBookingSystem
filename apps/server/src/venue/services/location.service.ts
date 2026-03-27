@@ -8,7 +8,7 @@ import {
   LocationListItemDto,
   AdminOwnerFeesResponseDto,
 } from '../dto/create-venue.dto';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 
 @Injectable()
 export class LocationService {
@@ -18,7 +18,7 @@ export class LocationService {
     ownerId: string,
     dto: CreateLocationDto,
   ): Promise<string> {
-    const locationId = uuidv4();
+    const locationId = randomUUID();
 
     try {
       await this.databaseService.execute(

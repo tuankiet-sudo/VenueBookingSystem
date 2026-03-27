@@ -16,7 +16,7 @@ import {
 } from '../dto/create-venue.dto';
 import { VenuePreviewResponseDto } from '../dto/venue-preview-response.dto';
 import { DatabaseService } from '../../database/database.service';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 
 @Injectable()
 export class VenueService {
@@ -30,7 +30,7 @@ export class VenueService {
       );
     }
 
-    const venueTypeId = uuidv4();
+    const venueTypeId = randomUUID();
 
     try {
       await this.databaseService.execute(
