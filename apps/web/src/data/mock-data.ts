@@ -375,8 +375,8 @@ export const mockVenues: VenueWithDetails[] = [
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01'),
-    location: mockLocations[0],
-    venueType: mockVenueTypes[0],
+    location: mockLocations[0]!,
+    venueType: mockVenueTypes[0]!,
     images: [
       {
         image_id: '1',
@@ -407,8 +407,8 @@ export const mockVenues: VenueWithDetails[] = [
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01'),
-    location: mockLocations[1],
-    venueType: mockVenueTypes[0],
+    location: mockLocations[1]!,
+    venueType: mockVenueTypes[0]!,
     images: [
       {
         image_id: '3',
@@ -439,8 +439,8 @@ export const mockVenues: VenueWithDetails[] = [
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01'),
-    location: mockLocations[0],
-    venueType: mockVenueTypes[1],
+    location: mockLocations[0]!,
+    venueType: mockVenueTypes[1]!,
     images: [
       {
         image_id: '5',
@@ -464,8 +464,8 @@ export const mockVenues: VenueWithDetails[] = [
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01'),
-    location: mockLocations[1],
-    venueType: mockVenueTypes[2],
+    location: mockLocations[1]!,
+    venueType: mockVenueTypes[2]!,
     images: [
       {
         image_id: '6',
@@ -490,8 +490,8 @@ export const mockVenues: VenueWithDetails[] = [
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01'),
-    location: mockLocations[2],
-    venueType: mockVenueTypes[1],
+    location: mockLocations[2]!,
+    venueType: mockVenueTypes[1]!,
     images: [
       {
         image_id: '7',
@@ -522,8 +522,8 @@ export const mockVenues: VenueWithDetails[] = [
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01'),
-    location: mockLocations[2],
-    venueType: mockVenueTypes[0],
+    location: mockLocations[2]!,
+    venueType: mockVenueTypes[0]!,
     images: [
       {
         image_id: '9',
@@ -547,8 +547,8 @@ export const mockVenues: VenueWithDetails[] = [
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01'),
-    location: mockLocations[3],
-    venueType: mockVenueTypes[3],
+    location: mockLocations[3]!,
+    venueType: mockVenueTypes[3]!,
     images: [
       {
         image_id: '10',

@@ -1,4 +1,5 @@
-import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
+import type { CredentialResponse } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 import { useEffect, useRef, useState } from 'react';
 import { useWindowSize } from 'usehooks-ts';
 

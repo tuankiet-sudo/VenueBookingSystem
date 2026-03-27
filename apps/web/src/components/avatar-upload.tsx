@@ -60,7 +60,7 @@ export function AvatarUpload({
     e.preventDefault();
     setIsDragging(false);
 
-    const file = e.dataTransfer.files[0];
+    const file = e.dataTransfer.files[0] ?? null;
     handleFileChange(file);
   };
 
