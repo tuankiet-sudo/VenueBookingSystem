@@ -129,14 +129,14 @@ export function StepTwo({
   //   };
   // }, [invoiceId, bookingId, completePaymentMutation, onPaymentSuccess]);
 
-  // setTimeout(async () => {
-  //   try {
-  //     await orderApi.completePayment(bookingId, invoiceId);
-  //     onPaymentSuccess();
-  //   } catch (error) {
-  //     console.error('Error calling API:', error);
-  //   }
-  // }, 32000);
+  setTimeout(async () => {
+    try {
+      await orderApi.completePayment(bookingId, invoiceId);
+      onPaymentSuccess();
+    } catch (error) {
+      console.error('Error calling API:', error);
+    }
+  }, 32000);
 
   return (
     <div className="mx-auto max-w-5xl">
