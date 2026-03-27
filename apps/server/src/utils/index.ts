@@ -1,4 +1,5 @@
 export function convertUUIDtoBinaryHex(rawUUID: string): Buffer {
+  console.log('Converting UUID to binary hex:', rawUUID);
   if (typeof rawUUID !== 'string') {
     throw new TypeError(`Expected string, got ${typeof rawUUID}: ${rawUUID}`);
   }

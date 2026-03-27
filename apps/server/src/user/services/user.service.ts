@@ -59,6 +59,7 @@ export class UserService {
   }
 
   public async findUserById(userId: string): Promise<User> {
+    console.log('Finding user by ID:', userId);
     const result = await this.databaseService.execute<User>(
       `CALL FindUserById(?)`,
       [convertUUIDtoBinaryHex(userId)],
