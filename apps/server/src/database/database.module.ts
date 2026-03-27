@@ -22,6 +22,8 @@ import * as mysql from 'mysql2/promise';
           queueLimit: 0,
           enableKeepAlive: true,
           keepAliveInitialDelay: 0,
+          timezone: '+07:00', // Ép thư viện mysql2 tự động chuyển ngày giờ sang giờ VN
+          dateStrings: true, // Báo cho mysql2 biết hãy trả về string ngày giờ nguyên bản, đừng để Node.js UTC ép kiểu lại
         });
       },
       inject: [commonConfig.KEY],
