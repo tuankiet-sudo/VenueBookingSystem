@@ -151,8 +151,8 @@ export function OwnerOrdersPage() {
                   <option value="">All Locations</option>
                   {locations.map((location) => (
                     <option
-                      key={location.locationId}
-                      value={location.locationId}
+                      key={location.location_id}
+                      value={location.location_id}
                     >
                       {location.name}
                     </option>
