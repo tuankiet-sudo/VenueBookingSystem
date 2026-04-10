@@ -170,8 +170,8 @@ const LocationCard = memo(function LocationCard({
               <h3
                 onClick={() =>
                   navigate({
-                    to: `/locations/${location.location_id}`,
-                  })
+                    to: '/locations/$location-id',
+                    params: { 'location-id': location.location_id },                  })
                 }
                 className="mb-1 cursor-pointer text-2xl font-bold text-primary hover:underline"
               >

@@ -151,8 +151,9 @@ export class LocationService {
       );
       const result = raw.map((venue) => ({
         ...venue,
-        venueImageURLs: venue.venueImageURLs.split(','),
-      }));
+        venueImageURLs: venue.venueImageURLs
+          ? venue.venueImageURLs.split(',').map((url: string) => url.trim())
+          : [],      }));
       return result;
     } catch (error) {
       throw new ConflictException(

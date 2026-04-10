@@ -34,7 +34,7 @@ export function OwnerLanding() {
         const statusMap = locations.reduce(
           (acc, loc) => ({
             ...acc,
-            [loc.locationId]: Boolean(loc.isActive),
+            [loc.location_id]: Boolean(loc.isActive),
           }),
           {},
         );
@@ -69,7 +69,7 @@ export function OwnerLanding() {
       // Update locations list
       setOwnerLocations((prev) =>
         prev.map((loc) =>
-          loc.locationId === locationId
+          loc.location_id === locationId
             ? { ...loc, isActive: newStatus ? 1 : 0 }
             : loc,
         ),
@@ -139,9 +139,9 @@ export function OwnerLanding() {
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {ownerLocations.map((location) => (
                   <div
-                    key={location.locationId}
+                    key={location.location_id}
                     className={`overflow-hidden rounded-lg border transition-shadow hover:shadow-md ${
-                      locationStatus[location.locationId]
+                      locationStatus[location.location_id]
                         ? 'border-gray-200 bg-white shadow-sm'
                         : 'border-gray-300 bg-gray-50 shadow-sm'
                     }`}
@@ -152,7 +152,7 @@ export function OwnerLanding() {
                         src={location.thumbnailURL}
                         alt={location.name}
                         className={`size-full object-cover transition-transform duration-300 ${
-                          locationStatus[location.locationId]
+                          locationStatus[location.location_id]
                             ? 'hover:scale-105'
                             : 'opacity-60'
                         }`}
@@ -160,18 +160,18 @@ export function OwnerLanding() {
                       {/* Status Badge */}
                       <div
                         className={`absolute right-3 top-3 rounded-full px-2 py-1 text-xs font-semibold ${
-                          locationStatus[location.locationId]
+                          locationStatus[location.location_id]
                             ? 'bg-white text-primary'
                             : 'bg-red-100 text-red-700'
                         }`}
                       >
-                        {locationStatus[location.locationId]
+                        {locationStatus[location.location_id]
                           ? `⭐ ${location.avgRating}`
                           : '🔴 Inactive'}
                       </div>
 
                       {/* Inactive Overlay */}
-                      {!locationStatus[location.locationId] && (
+                      {!locationStatus[location.location_id] && (
                         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                           <div className="flex flex-col items-center gap-2 text-white">
                             <AlertCircle className="size-8" />
@@ -193,7 +193,7 @@ export function OwnerLanding() {
                       </p>
                       <p
                         className={`mb-4 line-clamp-2 text-sm ${
-                          locationStatus[location.locationId]
+                          locationStatus[location.location_id]
                             ? 'text-gray-600'
                             : 'text-gray-500'
                         }`}
@@ -205,31 +205,31 @@ export function OwnerLanding() {
                       <div className="flex gap-2">
                         <button
                           onClick={() =>
-                            handleToggleLocationStatus(location.locationId)
+                            handleToggleLocationStatus(location.location_id)
                           }
-                          disabled={togglingLocation === location.locationId}
+                          disabled={togglingLocation === location.location_id}
                           className={`flex flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
-                            togglingLocation === location.locationId
+                            togglingLocation === location.location_id
                               ? 'cursor-not-allowed opacity-50'
                               : ''
                           } ${
-                            locationStatus[location.locationId]
+                            locationStatus[location.location_id]
                               ? 'border border-yellow-600 text-yellow-600 hover:bg-yellow-50'
                               : 'bg-green-100 text-green-700 hover:bg-green-200'
                           }`}
                         >
                           <Power className="size-4" />
-                          {togglingLocation === location.locationId
+                          {togglingLocation === location.location_id
                             ? 'Updating...'
-                            : locationStatus[location.locationId]
+                            : locationStatus[location.location_id]
                               ? 'Deactivate'
                               : 'Activate'}
                         </button>
                         <button
                           onClick={() =>
                             navigate({
-                              to: `/owner/locations/${location.locationId}/edit`,
-                            })
+                              to: '/owner/locations/$location-id/edit',
+                              params: { 'location-id': location.location_id },                            })
                           }
                           className="flex-1 rounded-md border border-primary px-3 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
                         >
@@ -238,8 +238,8 @@ export function OwnerLanding() {
                         <button
                           onClick={() =>
                             navigate({
-                              to: `/owner/locations/${location.locationId}`,
-                            })
+                              to: '/owner/locations/$location-id',
+                              params: { 'location-id': location.location_id },                            })
                           }
                           className="flex-1 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-300"
                         >

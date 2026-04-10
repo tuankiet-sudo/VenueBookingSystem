@@ -137,8 +137,8 @@ function FavoritesPage() {
                   <div
                     onClick={() =>
                       navigate({
-                        to: `/locations/${favorite.locationId}`,
-                      })
+                        to: '/locations/$location-id',
+                        params: { 'location-id': favorite.locationId },                      })
                     }
                     className="relative -m-6 mb-4 h-48 cursor-pointer overflow-hidden rounded-t-xl"
                   >
@@ -157,8 +157,8 @@ function FavoritesPage() {
                   <div
                     onClick={() =>
                       navigate({
-                        to: `/locations/${favorite.locationId}`,
-                      })
+                        to: '/locations/$location-id',
+                        params: { 'location-id': favorite.locationId },                      })
                     }
                     className="cursor-pointer"
                   >

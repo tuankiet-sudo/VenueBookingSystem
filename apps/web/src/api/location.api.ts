@@ -20,7 +20,7 @@ export interface Location {
 }
 
 export interface LocationResponse {
-  locationId: string;
+  location_id: string;
   name: string;
   addrNo: string;
   description: string;
