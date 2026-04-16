@@ -1,70 +1,75 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import express from 'express';
 import * as yaml from 'js-yaml';
 
+let cachedServer: any;
+
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  app.enableCors({
-    origin: 'http://localhost:5173', // Allow all origins
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-  });
+  if (!cachedServer) {
+    const expressApp = express();
+    const app = await NestFactory.create(
+      AppModule,
+      new ExpressAdapter(expressApp),
+    );
 
-  // Swagger Configuration
-  const config = new DocumentBuilder()
-    .setTitle('Venue Booking System API')
-    .setDescription(
-      'API documentation for the Venue Booking System - manage locations, venues, bookings, and payments',
-    )
-    .setVersion('1.0')
-    .addBearerAuth(
-      {
-        type: 'http',
-        scheme: 'bearer',
-        bearerFormat: 'JWT',
-        name: 'JWT',
-        description: 'Enter JWT token',
-        in: 'header',
+    app.setGlobalPrefix('api');
+
+    app.enableCors({
+      origin: true,
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      credentials: true,
+    });
+
+    // Swagger Configuration
+    const config = new DocumentBuilder()
+      .setTitle('Venue Booking System API')
+      .setDescription(
+        'API documentation for the Venue Booking System - manage locations, venues, bookings, and payments',
+      )
+      .setVersion('1.0')
+      .addBearerAuth(
+        {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+          name: 'JWT',
+          description: 'Enter JWT token',
+          in: 'header',
+        },
+        'JWT-auth',
+      )
+      .build();
+
+    const document = SwaggerModule.createDocument(app, config);
+
+    // Setup Swagger UI at /api
+    SwaggerModule.setup('api', app, document, {
+      swaggerOptions: {
+        persistAuthorization: true,
       },
-      'JWT-auth',
-    )
-    .build();
+      customSiteTitle: 'Venue Booking API Docs',
+    });
 
-  const document = SwaggerModule.createDocument(app, config);
+    app.use('/swagger/yaml', (req: any, res: any) => {
+      res.setHeader('Content-Type', 'text/yaml');
+      res.send(yaml.dump(document));
+    });
 
-  // Setup Swagger UI at /api
-  SwaggerModule.setup('api', app, document, {
-    swaggerOptions: {
-      persistAuthorization: true,
-    },
-    customSiteTitle: 'Venue Booking API Docs',
-  });
+    app.use('/swagger/json', (req: any, res: any) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.send(JSON.stringify(document, null, 2));
+    });
 
-  // Serve YAML file at /swagger/yaml
-  app.use('/swagger/yaml', (req, res) => {
-    res.setHeader('Content-Type', 'text/yaml');
-    res.send(yaml.dump(document));
-  });
-
-  // Serve JSON file at /swagger/json
-  app.use('/swagger/json', (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(document, null, 2));
-  });
-
-  await app.listen(process.env.PORT ?? 3001);
-  console.log(
-    `\n🚀 Application is running on: http://localhost:${process.env.PORT ?? 3001}`,
-  );
-  console.log(
-    `📚 Swagger UI: http://localhost:${process.env.PORT ?? 3001}/api`,
-  );
-  console.log(
-    `📄 Swagger YAML: http://localhost:${process.env.PORT ?? 3001}/swagger/yaml`,
-  );
-  console.log(
-    `📄 Swagger JSON: http://localhost:${process.env.PORT ?? 3001}/swagger/json\n`,
-  );
+    await app.init();
+    cachedServer = expressApp;
+  }
+  return cachedServer;
 }
-bootstrap();
+
+export default async function handler(req: any, res: any) {
+  const server = await bootstrap();
+  return server(req, res);
+}

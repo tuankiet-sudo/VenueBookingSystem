@@ -58,20 +58,23 @@ CREATE PROCEDURE getOrdersForOwner(
 BEGIN
   SELECT
     BIN_TO_UUID(o.order_id) AS order_id,
-    o.status AS order_status,
-    o.startHour AS start_time,
-    o.endHour AS end_time,
-    o.totalPrice AS total_price,
-    l.name AS location_name,
-    u.firstName AS client_first_name,
-    u.lastName AS client_last_name,
-    u.phoneNo AS client_phone,
-    i.senderBankAccount AS client_bank_account,
-    i.paidOn AS payment_date
+    o.status AS status,
+    o.startHour AS startHour,
+    o.endHour AS endHour,
+    o.totalPrice AS totalPrice,
+    o.venueName AS venueName,
+    v.floor AS venueFloor,
+    l.name AS locationName,
+    u.firstName AS clientFirstName,
+    u.lastName AS clientLastName,
+    u.phoneNo AS clientPhoneNo,
+    i.senderBankAccount AS clientBankAccount,
+    i.paidOn AS paidAt
   FROM orders o
   JOIN users u ON o.client_id = u.id
   JOIN locations l ON o.venue_loc_id = l.location_id
-  JOIN invoices i ON o.order_id = i.order_id
+  LEFT JOIN venues v ON o.venue_loc_id = v.location_id AND o.venueName = v.name
+  LEFT JOIN invoices i ON o.order_id = i.order_id
   WHERE l.owner_id = UUID_TO_BIN(p_ownerId)
     AND (p_locationId IS NULL OR l.location_id = UUID_TO_BIN(p_locationId))
     AND (p_orderStatus IS NULL OR o.status = p_orderStatus)

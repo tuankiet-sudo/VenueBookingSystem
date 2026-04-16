@@ -229,8 +229,7 @@ export function OwnerLanding() {
                           onClick={() =>
                             navigate({
                               to: '/owner/locations/$location-id/edit',
-                              params: { 'location-id': location.location_id },
-                            })
+                              params: { 'location-id': location.location_id },                            })
                           }
                           className="flex-1 rounded-md border border-primary px-3 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
                         >
@@ -240,8 +239,7 @@ export function OwnerLanding() {
                           onClick={() =>
                             navigate({
                               to: '/owner/locations/$location-id',
-                              params: { 'location-id': location.location_id },
-                            })
+                              params: { 'location-id': location.location_id },                            })
                           }
                           className="flex-1 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-300"
                         >

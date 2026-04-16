@@ -1,0 +1,38 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "apps/server/src/main.ts",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "apps/web/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "dist"
+            }
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "/apps/server/src/main.ts"
+        },
+        {
+            "source": "/swagger/(.*)",
+            "destination": "/apps/server/src/main.ts"
+        },
+        {
+            "source": "/assets/(.*)",
+            "destination": "/apps/web/assets/$1"
+        },
+        {
+            "source": "/(.*\\.(?:png|svg|ico|jpg|jpeg))",
+            "destination": "/apps/web/$1"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/apps/web/index.html"
+        }
+    ]
+}

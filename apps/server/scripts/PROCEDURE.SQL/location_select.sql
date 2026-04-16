@@ -197,6 +197,7 @@ GROUP BY
     v.area,
     v.pricePerHour,
     v.isActive,
+    v.createdAt,
     vt.name,
     vt.maxCapacity
 ORDER BY

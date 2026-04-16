@@ -1,9 +1,9 @@
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
-import { DatabaseService } from 'src/database/database.service';
-// import { TableService } from 'src/database/table.service';
-import { CREATE_OWNER_TABLE_QUERY } from 'src/database/queries';
-import { OwnerSignupDto } from 'src/auth/auth.dto';
-import { convertUUIDtoBinaryHex } from 'src/utils';
+import { DatabaseService } from '../../database/database.service';
+// import { TableService } from '../../database/table.service';
+import { CREATE_OWNER_TABLE_QUERY } from '../../database/queries';
+import { OwnerSignupDto } from '../../auth/auth.dto';
+import { convertUUIDtoBinaryHex } from '../../utils';
 import { UpdateOwnerDto } from '../user.dto';
 
 @Injectable()

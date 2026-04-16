@@ -1,4 +1,4 @@
-import { MembershipTier } from 'src/user/entities';
+import { MembershipTier } from '../../user/entities';
 
 export class Discount {
   public discount_id: Buffer; // BINARY(16) (Primary Key)

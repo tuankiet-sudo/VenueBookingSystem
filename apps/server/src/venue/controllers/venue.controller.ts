@@ -28,8 +28,8 @@ import {
   FavorResponseDto,
 } from '../dto/create-venue.dto';
 import { VenuePreviewResponseDto } from '../dto/venue-preview-response.dto';
-import { AdminGuard, AuthGuard, OwnerGuard } from 'src/auth/guards';
-import { User } from 'src/auth/decorators';
+import { AdminGuard, AuthGuard, OwnerGuard } from '../../auth/guards';
+import { User } from '../../auth/decorators';
 
 @ApiTags('Venues')
 @Controller('venue')

@@ -14,7 +14,7 @@ import {
   ApiResponse,
   ApiBearerAuth,
 } from '@nestjs/swagger';
-import { AuthGuard, OwnerGuard, AdminGuard } from 'src/auth/guards';
+import { AuthGuard, OwnerGuard, AdminGuard } from '../../auth/guards';
 import {
   CreateLocationDto,
   SearchLocationsDto,
@@ -25,7 +25,7 @@ import {
   AdminOwnerFeesQueryDto,
   AdminOwnerFeesResponseDto,
 } from '../dto/create-venue.dto';
-import { User } from 'src/auth/decorators';
+import { User } from '../../auth/decorators';
 import { LocationService } from '../services/location.service';
 
 @ApiTags('Locations')

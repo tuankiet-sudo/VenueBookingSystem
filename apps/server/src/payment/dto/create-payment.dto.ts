@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsOptional } from 'class-validator';
-import { MembershipTier } from 'src/user/entities';
+import { MembershipTier } from '../../user/entities';
 
 export class CreatePaymentDto {}
 

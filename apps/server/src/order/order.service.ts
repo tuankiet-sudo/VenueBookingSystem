@@ -13,8 +13,8 @@ import {
   ClientOrderResponseDto,
   InvoiceCreateDataResponseDto,
 } from './dto/order-response.dto';
-import { DatabaseService } from 'src/database/database.service';
-import { v4 as uuidv4 } from 'uuid';
+import { DatabaseService } from '../database/database.service';
+import { randomUUID } from 'node:crypto';
 import dayjs from 'dayjs';
 
 @Injectable()
@@ -26,7 +26,7 @@ export class OrderService {
     clientId: string,
     dto: CreateOrderDto,
   ): Promise<{ expiredTime: Date; orderId: string }> {
-    const orderId = uuidv4();
+    const orderId = randomUUID();
 
     try {
       await this.databaseService.execute(

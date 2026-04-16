@@ -448,8 +448,7 @@ export function HomePage() {
                   key={location.location_id}
                   className="card hover-lift cursor-pointer"
                   onClick={() =>
-                    navigate({ to: '/locations/$location-id', params: { 'location-id': location.location_id } })
-                  }
+                  navigate({ to: '/locations/$location-id', params: { 'location-id': location.location_id } })                  }
                 >
                   <div className="relative -m-6 mb-4 h-64 overflow-hidden rounded-t-xl">
                     <img
@@ -531,8 +530,7 @@ export function HomePage() {
                 key={location.location_id}
                 className="group relative h-80 cursor-pointer overflow-hidden rounded-2xl"
                 onClick={() =>
-                  navigate({ to: '/locations/$location-id', params: { 'location-id': location.location_id } })
-                }
+                navigate({ to: '/locations/$location-id', params: { 'location-id': location.location_id } })                }
               >
                 <img
                   src={location.thumbnailURL}

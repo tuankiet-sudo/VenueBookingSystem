@@ -41,7 +41,6 @@ export function LocationDetailPage() {
   // Fetch location details, venues, and amenities
   useEffect(() => {
     if (!locationId) return;
-
     const fetchData = async () => {
       try {
         setIsLoading(true);

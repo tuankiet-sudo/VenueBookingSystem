@@ -1,6 +1,6 @@
 import { Body, Controller, Injectable, Post, UseGuards } from '@nestjs/common';
 import { MinioStorageService } from './services/minio-storage.service';
-import { AuthGuard } from 'src/auth/guards';
+import { AuthGuard } from '../auth/guards';
 
 @Injectable()
 @Controller('storage')

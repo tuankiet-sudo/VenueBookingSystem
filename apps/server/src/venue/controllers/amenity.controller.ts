@@ -16,7 +16,7 @@ import {
 } from '@nestjs/swagger';
 import { AmenityService } from '../services/amenity.service';
 import { CreateAmenityDto, UpdateAmenityDto } from '../dto/create-venue.dto';
-import { OwnerGuard } from 'src/auth/guards';
+import { OwnerGuard } from '../../auth/guards';
 
 @ApiTags('Amenities')
 @Controller('amenity')

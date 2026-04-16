@@ -1,5 +1,5 @@
 import { Injectable, ConflictException } from '@nestjs/common';
-import { DatabaseService } from 'src/database/database.service';
+import { DatabaseService } from '../../database/database.service';
 import { CreateAmenityDto, UpdateAmenityDto } from '../dto/create-venue.dto';
 
 @Injectable()

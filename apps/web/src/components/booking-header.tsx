@@ -267,6 +267,12 @@ export const Header = memo(function Header() {
                       )}
                       <div className="my-1 border-t border-gray-200" />
                       <Link
+                        to="/profile"
+                        className="block px-4 py-2 text-gray-700 transition-colors hover:bg-gray-100"
+                      >
+                        My Profile
+                      </Link>
+                      <Link
                         to="/edit-profile"
                         className="block px-4 py-2 text-gray-700 transition-colors hover:bg-gray-100"
                       >

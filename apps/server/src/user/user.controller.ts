@@ -7,8 +7,8 @@ import {
 } from '@nestjs/swagger';
 import { UserService } from './services/user.service';
 import { UpdateOwnerDto, UpdateUserDto, UserProfileDto } from './user.dto';
-import { AdminGuard, AuthGuard, OwnerGuard } from 'src/auth/guards';
-import { User } from 'src/auth/decorators';
+import { AdminGuard, AuthGuard, OwnerGuard } from '../auth/guards';
+import { User } from '../auth/decorators';
 import { OwnerService } from './services';
 
 @ApiTags('Users')

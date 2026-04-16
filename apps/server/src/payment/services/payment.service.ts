@@ -9,8 +9,8 @@ import {
   UpdateApplyDto,
   DeleteApplyDto,
 } from '../dto/payment.dto';
-import { DatabaseService } from 'src/database/database.service';
-import { v4 as uuidv4 } from 'uuid';
+import { DatabaseService } from '../../database/database.service';
+import { randomUUID } from 'node:crypto';
 
 @Injectable()
 export class PaymentService {
@@ -20,7 +20,7 @@ export class PaymentService {
   public async createInvoice(
     dto: CreateInvoiceDto,
   ): Promise<{ id: string; url: string; totalPrice: string }> {
-    const invoiceId = uuidv4();
+    const invoiceId = randomUUID();
     try {
       const data = await this.databaseService.execute<{
         totalPrice: string;
@@ -51,7 +51,7 @@ export class PaymentService {
     invoiceId: string;
   }): Promise<void> {
     // Simulate a transaction ID from webhook
-    const transactionId = uuidv4();
+    const transactionId = randomUUID();
     try {
       await this.databaseService.execute(`CALL Order_Update(?, ?, ?, ?)`, [
         payload.orderId,
@@ -113,7 +113,7 @@ export class PaymentService {
 
   // ===== DISCOUNT OPERATIONS =====
   public async createDiscount(dto: CreateDiscountDto): Promise<string> {
-    const discountId = uuidv4();
+    const discountId = randomUUID();
     try {
       await this.databaseService.execute(
         `CALL Discount_Insert(?, ?, ?, ?, ?, ?, ?, ?, ?)`,

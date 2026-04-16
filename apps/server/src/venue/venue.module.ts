@@ -5,8 +5,8 @@ import { LocationController } from './controllers/location.controller';
 import { AmenityController } from './controllers/amenity.controller';
 import { AmenityService } from './services/amenity.service';
 import { LocationService } from './services/location.service';
-import { DatabaseModule } from 'src/database/database.module';
-import { UserModule } from 'src/user/user.module';
+import { DatabaseModule } from '../database/database.module';
+import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [DatabaseModule, UserModule],

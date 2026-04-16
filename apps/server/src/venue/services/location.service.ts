@@ -1,5 +1,5 @@
 import { Injectable, ConflictException } from '@nestjs/common';
-import { DatabaseService } from 'src/database/database.service';
+import { DatabaseService } from '../../database/database.service';
 import {
   CreateLocationDto,
   SearchLocationsDto,
@@ -8,7 +8,7 @@ import {
   LocationListItemDto,
   AdminOwnerFeesResponseDto,
 } from '../dto/create-venue.dto';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 
 @Injectable()
 export class LocationService {
@@ -18,7 +18,7 @@ export class LocationService {
     ownerId: string,
     dto: CreateLocationDto,
   ): Promise<string> {
-    const locationId = uuidv4();
+    const locationId = randomUUID();
 
     try {
       await this.databaseService.execute(
@@ -153,8 +153,7 @@ export class LocationService {
         ...venue,
         venueImageURLs: venue.venueImageURLs
           ? venue.venueImageURLs.split(',').map((url: string) => url.trim())
-          : [],
-      }));
+          : [],      }));
       return result;
     } catch (error) {
       throw new ConflictException(

@@ -238,18 +238,33 @@ function UserDetailPage() {
               {/* Client-specific Info */}
               {user.userType === 'client' && (
                 <div className="card mb-6">
-                  <h3 className="mb-4 text-xl font-bold text-gray-900">
+                  <h3 className="mb-4 text-xl font-bold text-gray-900 border-b pb-4">
                     Membership Information
                   </h3>
-                  <div className="flex items-center gap-4">
-                    <div className="rounded-full bg-orange p-3">
-                      <CreditCard className="size-8 text-orange" />
+                  <div className="flex items-center gap-6 pt-2">
+                    <div className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm flex flex-col items-center justify-center">
+                      <CreditCard className="size-10 text-gray-800" />
                     </div>
-                    <div>
-                      <p className="text-sm text-gray-600">Membership Points</p>
-                      <p className="text-3xl font-bold text-primary">
-                        {user.membershipPoints?.toLocaleString() || 0}
-                      </p>
+                    <div className="flex flex-col gap-1 w-full relative">
+                      <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">Membership Points</p>
+                      <div className="flex items-center gap-4">
+                        <p className="text-4xl font-bold text-[#0a192f] tracking-tight">
+                          {user.membershipPoints?.toLocaleString() || 0}
+                        </p>
+                        {(() => {
+                          const points = user.membershipPoints || 0;
+                          let rank = { name: 'Bronze', color: 'text-amber-700', bg: 'bg-amber-100' };
+                          if (points >= 10000) rank = { name: 'Platinum', color: 'text-purple-600', bg: 'bg-purple-100' };
+                          else if (points >= 5000) rank = { name: 'Gold', color: 'text-yellow-600', bg: 'bg-yellow-100' };
+                          else if (points >= 1000) rank = { name: 'Silver', color: 'text-gray-500', bg: 'bg-gray-100' };
+                          
+                          return (
+                            <span className={`px-4 py-1.5 rounded-full text-sm font-bold shadow-sm border border-white/50 ${rank.bg} ${rank.color}`}>
+                              {rank.name}
+                            </span>
+                          );
+                        })()}
+                      </div>
                     </div>
                   </div>
                 </div>

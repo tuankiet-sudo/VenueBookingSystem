@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import * as minio from 'minio';
 
 import { MinioStorageService } from './services/minio-storage.service';
-import { commonConfig, CommonConfigType } from 'src/config';
+import { commonConfig, CommonConfigType } from '../config';
 import { MinioStorageController } from './storage.controller';
-import { DatabaseModule } from 'src/database/database.module';
-import { UserModule } from 'src/user/user.module';
+import { DatabaseModule } from '../database/database.module';
+import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [DatabaseModule, UserModule],

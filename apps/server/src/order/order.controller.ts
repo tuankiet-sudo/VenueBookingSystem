@@ -27,8 +27,8 @@ import {
   InvoiceCreateDataResponseDto,
   GetClientOrdersQueryDto,
 } from './dto/order-response.dto';
-import { AuthGuard, OwnerGuard } from 'src/auth/guards';
-import { User } from 'src/auth/decorators';
+import { AuthGuard, OwnerGuard } from '../auth/guards';
+import { User } from '../auth/decorators';
 
 @ApiTags('Orders')
 @Controller('order')

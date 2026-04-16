@@ -24,7 +24,7 @@ import {
   UpdateApplyDto,
   DeleteApplyDto,
 } from '../dto/payment.dto';
-import { AdminGuard, AuthGuard } from 'src/auth/guards';
+import { AdminGuard, AuthGuard } from '../../auth/guards';
 
 @ApiTags('Payments')
 @Controller('payment')

@@ -90,7 +90,14 @@ export const orderApi = {
    */
   getOwnerOrders: async (filters?: OwnerOrderFilters): Promise<Order[]> => {
     const response = await customAxios.get<Order[]>('/order/owner', {
-      params: filters,
+      params: filters
+        ? {
+            locationId: filters.locationId,
+            orderStatus: filters.status,
+            startDate: filters.startDate,
+            endDate: filters.endDate,
+          }
+        : undefined,
     });
     return response.data;
   },

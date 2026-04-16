@@ -138,8 +138,7 @@ function FavoritesPage() {
                     onClick={() =>
                       navigate({
                         to: '/locations/$location-id',
-                        params: { 'location-id': favorite.locationId },
-                      })
+                        params: { 'location-id': favorite.locationId },                      })
                     }
                     className="relative -m-6 mb-4 h-48 cursor-pointer overflow-hidden rounded-t-xl"
                   >
@@ -159,8 +158,7 @@ function FavoritesPage() {
                     onClick={() =>
                       navigate({
                         to: '/locations/$location-id',
-                        params: { 'location-id': favorite.locationId },
-                      })
+                        params: { 'location-id': favorite.locationId },                      })
                     }
                     className="cursor-pointer"
                   >
